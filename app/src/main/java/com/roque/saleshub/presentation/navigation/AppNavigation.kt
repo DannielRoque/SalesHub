@@ -1,0 +1,53 @@
+package com.roque.saleshub.presentation.navigation
+
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+
+@Composable
+fun AppNavigation() {
+
+    val navController = rememberNavController()
+
+    Scaffold(
+
+        bottomBar = {
+            BottonBar(navController = navController)
+        }
+    ) { paddingValues ->
+
+        NavHost(
+            navController = navController,
+            startDestination = BottomNavItem.Home.route,
+            modifier = Modifier.padding(paddingValues)
+        ) {
+            composable(
+                route = BottomNavItem.Home.route
+            ) {
+                //TODO Adicionar HomePage para navegação
+            }
+
+            composable(
+                route = BottomNavItem.Products.route
+            ) {
+                //TODO Adicionar Products para navegação
+            }
+
+            composable(
+                route = BottomNavItem.Clients.route
+            ) {
+                //TODO Adicionar Clients para navegação
+            }
+
+            composable(
+                route = BottomNavItem.Settings.route
+            ) {
+                //TODO Adicionar Settings para navegação
+            }
+        }
+    }
+}
