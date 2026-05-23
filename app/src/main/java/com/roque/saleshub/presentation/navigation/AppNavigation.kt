@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.roque.saleshub.presentation.home.HomeScreen
 
 @Composable
 fun AppNavigation() {
@@ -28,7 +29,7 @@ fun AppNavigation() {
             composable(
                 route = BottomNavItem.Home.route
             ) {
-                //TODO Adicionar HomePage para navegação
+                HomeScreen()
             }
 
             composable(
