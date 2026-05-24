@@ -25,9 +25,9 @@ sealed class BottomNavItem(
         icon = Icons.Default.ShoppingCart
     )
 
-    data object Clients : BottomNavItem(
-        route = "clientes",
-        title = "Clientes",
+    data object Historico : BottomNavItem(
+        route = "historico",
+        title = "Histórico",
         icon = Icons.Default.Person
     )
 

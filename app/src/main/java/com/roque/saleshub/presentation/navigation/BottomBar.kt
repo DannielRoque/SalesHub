@@ -16,7 +16,7 @@ fun BottonBar(
     val items = listOf(
         BottomNavItem.Home,
         BottomNavItem.Products,
-        BottomNavItem.Clients,
+        BottomNavItem.Historico,
         BottomNavItem.Settings
     )
 
