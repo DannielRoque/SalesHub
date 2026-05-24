@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.roque.saleshub.presentation.home.HomeScreen
 import com.roque.saleshub.presentation.products.ProductsScreen
+import com.roque.saleshub.presentation.sales.SalesScreen
 
 @Composable
 fun AppNavigation() {
@@ -42,7 +43,7 @@ fun AppNavigation() {
             composable(
                 route = BottomNavItem.Historico.route
             ) {
-                //TODO Adicionar Histórico para navegação
+                SalesScreen()
             }
 
             composable(
