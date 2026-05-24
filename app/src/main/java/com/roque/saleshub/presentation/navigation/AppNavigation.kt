@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.roque.saleshub.presentation.home.HomeScreen
 import com.roque.saleshub.presentation.products.ProductsScreen
 import com.roque.saleshub.presentation.sales.SalesScreen
+import com.roque.saleshub.presentation.settings.SettingsScreen
 
 @Composable
 fun AppNavigation() {
@@ -49,7 +50,7 @@ fun AppNavigation() {
             composable(
                 route = BottomNavItem.Settings.route
             ) {
-                //TODO Adicionar Settings para navegação
+                SettingsScreen()
             }
         }
     }
