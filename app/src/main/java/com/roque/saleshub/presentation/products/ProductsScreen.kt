@@ -15,38 +15,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.roque.saleshub.data.mock.FakeProducts.products
 import com.roque.saleshub.presentation.products.components.ProductCard
-
-data class ProductUi(
-    val id: Int,
-    val name: String,
-    val price: String,
-    val stock: Int
-)
 
 @Composable
 fun ProductsScreen() {
-
-    val products = listOf(
-        ProductUi(
-            id = 1,
-            name = "Coca-Cola 2L",
-            price = "R$ 12,00",
-            stock = 10
-        ),
-        ProductUi(
-            id = 2,
-            name = "Chocolate",
-            price = "R$ 8,50",
-            stock = 20
-        ),
-        ProductUi(
-            id = 3,
-            name = "Arroz 5kg",
-            price = "R$ 32,00",
-            stock = 15
-        )
-    )
 
     Scaffold(
         floatingActionButton = {

@@ -15,38 +15,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.roque.saleshub.data.mock.FakeSales.sales
 import com.roque.saleshub.presentation.sales.components.SaleCard
 import com.roque.saleshub.presentation.sales.components.SalesHeader
-import com.roque.saleshub.presentation.sales.model.SaleUi
 
 @Composable
-fun SalesScreen() {
-    val sales = listOf(
-
-        SaleUi(
-            id = 1,
-            customerName = "Daniel",
-            total = "R$ 230,00",
-            itemsCount = 3,
-            date = "Hoje, 10:45"
-        ),
-
-        SaleUi(
-            id = 2,
-            customerName = "Maria",
-            total = "R$ 540,00",
-            itemsCount = 6,
-            date = "Hoje, 09:10"
-        ),
-
-        SaleUi(
-            id = 3,
-            customerName = "José",
-            total = "R$ 120,00",
-            itemsCount = 2,
-            date = "Ontem, 19:20"
-        )
-    )
+fun SalesScreen(
+    onCreateSaleClick: () -> Unit
+) {
 
     Scaffold(
 
@@ -54,9 +30,7 @@ fun SalesScreen() {
 
             ExtendedFloatingActionButton(
 
-                onClick = {
-                    // navegar para CreateSaleScreen
-                }
+                onClick = onCreateSaleClick
 
             ) {
 

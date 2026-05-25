@@ -1,6 +1,5 @@
 package com.roque.saleshub.presentation.sales.components
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -12,23 +11,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.roque.saleshub.data.local.entity.SaleEntity
+import com.roque.saleshub.data.local.entity.SaleItemEntity
 
 @Composable
-fun SaleCard(
-    sale: SaleEntity,
-    modifier: Modifier = Modifier,
-    onClick: () -> Unit = {}
+fun SaleItemCard(
+    item: SaleItemEntity,
+    modifier: Modifier = Modifier
 ) {
 
     Card(
-
-        modifier = modifier
-            .fillMaxWidth()
-            .clickable {
-                onClick()
-            }
-
+        modifier = modifier.fillMaxWidth()
     ) {
 
         Row(
@@ -45,23 +37,23 @@ fun SaleCard(
             Column {
 
                 Text(
-                    text = sale.customerName,
+                    text = item.name,
                     style = MaterialTheme.typography.titleMedium
                 )
 
                 Text(
-                    text = "${sale.itemsCount} itens",
+                    text = "Qtd: ${item.quantity}",
                     style = MaterialTheme.typography.bodyMedium
                 )
 
                 Text(
-                    text = sale.date,
-                    style = MaterialTheme.typography.bodySmall
+                    text = "Unitário: R$ %.2f".format(item.unitPrice),
+                    style = MaterialTheme.typography.bodyMedium
                 )
             }
 
             Text(
-                text = "R$ %.2f".format(sale.totalPrice),
+                text = "R$ %.2f".format(item.totalPrice),
                 style = MaterialTheme.typography.titleMedium
             )
         }

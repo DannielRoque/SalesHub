@@ -11,12 +11,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.roque.saleshub.presentation.products.ProductUi
+import com.roque.saleshub.data.local.entity.ProductEntity
 
 
 @Composable
 fun ProductCard(
-    product : ProductUi,
+    product: ProductEntity,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -48,7 +48,7 @@ fun ProductCard(
             }
 
             Text(
-                text = product.price,
+                text = "R$ %.2f".format(product.price),
                 style = MaterialTheme.typography.titleMedium
             )
         }

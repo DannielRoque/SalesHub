@@ -20,14 +20,14 @@ import com.roque.saleshub.presentation.home.components.RecentSalesSection
 import com.roque.saleshub.presentation.home.components.SumaryCard
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onCreateSaleClick: () -> Unit
+) {
 
     Scaffold(
         floatingActionButton = {
             ExtendedFloatingActionButton(
-                onClick = {
-                    //TODO navegar para o historico
-                }
+                onClick = onCreateSaleClick
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,

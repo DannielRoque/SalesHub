@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.roque.saleshub.presentation.home.HomeScreen
 import com.roque.saleshub.presentation.products.ProductsScreen
+import com.roque.saleshub.presentation.sales.CreateSaleScreen
 import com.roque.saleshub.presentation.sales.SalesScreen
 import com.roque.saleshub.presentation.settings.SettingsScreen
 
@@ -32,7 +33,7 @@ fun AppNavigation() {
             composable(
                 route = BottomNavItem.Home.route
             ) {
-                HomeScreen()
+                HomeScreen(onCreateSaleClick = { navController.navigate(Routes.CREATE_SALE) })
             }
 
             composable(
@@ -44,13 +45,19 @@ fun AppNavigation() {
             composable(
                 route = BottomNavItem.Historico.route
             ) {
-                SalesScreen()
+                SalesScreen(onCreateSaleClick = { navController.navigate(Routes.CREATE_SALE) })
             }
 
             composable(
                 route = BottomNavItem.Settings.route
             ) {
                 SettingsScreen()
+            }
+
+            composable(
+                route = Routes.CREATE_SALE
+            ) {
+                CreateSaleScreen()
             }
         }
     }
