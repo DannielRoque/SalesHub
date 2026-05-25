@@ -13,6 +13,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.roque.saleshub.data.mock.FakeSales.sales
@@ -22,9 +24,11 @@ import com.roque.saleshub.presentation.sales.components.SalesHeader
 
 @Composable
 fun SalesScreen(
+    viewModel: SaleViewModel,
     onCreateSaleClick: () -> Unit,
     onBackClick: () -> Unit
 ) {
+    val salesWithItems by viewModel.salesState.collectAsState()
 
     Scaffold(
 
@@ -71,14 +75,14 @@ fun SalesScreen(
             }
 
             items(
-                items = sales,
-                key = { sale ->
-                    sale.id
+                items = salesWithItems,
+                key = { salesWithItems ->
+                    salesWithItems.sale.id
                 }
-            ) { sale ->
+            ) { salesWithItems ->
 
                 SaleCard(
-                    sale = sale
+                    sale = salesWithItems.sale
                 )
             }
         }

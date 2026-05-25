@@ -11,7 +11,7 @@ object FakeSales {
             customerName = "Daniel Tedola",
             totalPrice = 15.5,
             itemsCount = 9,
-            date = "27/12/2026"
+            createdAt = 18052022
         )
     )
 }

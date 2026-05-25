@@ -13,6 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.roque.saleshub.data.local.entity.SaleEntity
+import com.roque.saleshub.presentation.util.toFormattedDate
+import com.roque.saleshub.presentation.util.toFormattedDateTime
 
 @Composable
 fun SaleCard(
@@ -55,7 +57,7 @@ fun SaleCard(
                 )
 
                 Text(
-                    text = sale.date,
+                    text = sale.createdAt.toFormattedDateTime(),
                     style = MaterialTheme.typography.bodySmall
                 )
             }

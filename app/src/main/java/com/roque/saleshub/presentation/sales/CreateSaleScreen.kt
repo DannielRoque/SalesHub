@@ -44,6 +44,7 @@ private val DisabledColor = Color(0xFFD8D5E3)
 
 @Composable
 fun CreateSaleScreen(
+    viewModel: SaleViewModel,
     onBackClick: () -> Unit
 ) {
 
@@ -71,17 +72,13 @@ fun CreateSaleScreen(
         mutableIntStateOf(1)
     }
 
-    val addedProducts = remember {
-        mutableStateListOf<SaleItemEntity>()
-    }
-
-    val totalPrice = addedProducts.sumOf {
-        it.totalPrice
-    }
+    val addedProducts = remember { mutableStateListOf<SaleItemEntity>() }
+    val totalPrice = addedProducts.sumOf { it.totalPrice }
+    val totalItemsCount = addedProducts.sumOf { it.quantity }
 
     val hasProducts = addedProducts.isNotEmpty()
 
-    val isFinishEnabled = addedProducts.isNotEmpty()
+    val isFinishEnabled = hasProducts && selectedCustomer != null
 
     Scaffold(
 
@@ -92,7 +89,17 @@ fun CreateSaleScreen(
             TotalSection(
                 totalPrice = totalPrice,
                 isEnabled = isFinishEnabled,
-                onFinishOrderClick = { }
+                onFinishOrderClick = {
+                    viewModel.saveSale(
+                        customerName = selectedCustomer?.name ?: "Cliente Desconhecido",
+                        totalPrice = totalPrice,
+                        itemsCount = totalItemsCount,
+                        items = addedProducts.toList(),
+                        onSuccess = {
+                            onBackClick()
+                        }
+                    )
+                }
             )
         }
 
@@ -189,6 +196,7 @@ fun CreateSaleScreen(
                                 addedProducts.add(
 
                                     SaleItemEntity(
+                                        saleId = 0,
                                         id = product.id,
                                         name = product.name,
                                         quantity = quantity,
