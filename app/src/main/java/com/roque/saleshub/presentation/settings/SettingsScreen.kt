@@ -21,10 +21,13 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.roque.saleshub.presentation.components.ScreenHeader
 import com.roque.saleshub.presentation.settings.components.SettingsItem
 
 @Composable
-fun SettingsScreen() {
+fun SettingsScreen(
+    onBackClick: () -> Unit
+) {
     var darkModeEnabled by rememberSaveable {
         mutableStateOf(false)
     }
@@ -32,12 +35,6 @@ fun SettingsScreen() {
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-
-        Text(
-            text = "Settings",
-            style = MaterialTheme.typography.headlineMedium,
-            modifier = Modifier.padding(16.dp)
-        )
 
         LazyColumn(
 
@@ -52,6 +49,14 @@ fun SettingsScreen() {
                 Arrangement.spacedBy(12.dp)
 
         ) {
+
+            item {
+                ScreenHeader(
+                    title = "Configurações",
+                    subtitle = "",
+                    onBackClick = onBackClick
+                )
+            }
 
             item {
                 SettingsItem(

@@ -16,12 +16,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.roque.saleshub.data.mock.FakeSales.sales
+import com.roque.saleshub.presentation.components.ScreenHeader
 import com.roque.saleshub.presentation.sales.components.SaleCard
 import com.roque.saleshub.presentation.sales.components.SalesHeader
 
 @Composable
 fun SalesScreen(
-    onCreateSaleClick: () -> Unit
+    onCreateSaleClick: () -> Unit,
+    onBackClick: () -> Unit
 ) {
 
     Scaffold(
@@ -49,9 +51,11 @@ fun SalesScreen(
 
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues),
+                .padding(bottom = paddingValues.calculateBottomPadding()),
 
-            contentPadding = PaddingValues(16.dp),
+            contentPadding = PaddingValues(
+                horizontal = 16.dp,
+                vertical = 8.dp),
 
             verticalArrangement =
                 Arrangement.spacedBy(12.dp)
@@ -59,7 +63,11 @@ fun SalesScreen(
         ) {
 
             item {
-                SalesHeader()
+                ScreenHeader(
+                    title = "Histórico",
+                    subtitle = "Últimos pedidos",
+                    onBackClick = onBackClick
+                )
             }
 
             items(

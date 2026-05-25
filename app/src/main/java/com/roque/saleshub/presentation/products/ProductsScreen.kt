@@ -16,10 +16,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.roque.saleshub.data.mock.FakeProducts.products
+import com.roque.saleshub.presentation.components.ScreenHeader
 import com.roque.saleshub.presentation.products.components.ProductCard
 
 @Composable
-fun ProductsScreen() {
+fun ProductsScreen(
+    onBackClick: () -> Unit
+) {
 
     Scaffold(
         floatingActionButton = {
@@ -41,11 +44,20 @@ fun ProductsScreen() {
             modifier =
                 Modifier
                     .fillMaxSize()
-                    .padding(paddingValues),
+                    .padding(bottom = paddingValues.calculateBottomPadding()),
             contentPadding = PaddingValues(16.dp),
 
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
+
+            item {
+                ScreenHeader(
+                    title = "Produtos",
+                    subtitle = "",
+                    onBackClick = onBackClick
+                )
+            }
+
             items(
                 items = products,
                 key = { product ->

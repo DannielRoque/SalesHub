@@ -39,25 +39,30 @@ fun AppNavigation() {
             composable(
                 route = BottomNavItem.Products.route
             ) {
-                ProductsScreen()
+                ProductsScreen(onBackClick = { navController.popBackStack() })
             }
 
             composable(
                 route = BottomNavItem.Historico.route
             ) {
-                SalesScreen(onCreateSaleClick = { navController.navigate(Routes.CREATE_SALE) })
+                SalesScreen(onCreateSaleClick = { navController.navigate(Routes.CREATE_SALE) }, onBackClick = { navController.popBackStack() } )
             }
 
             composable(
                 route = BottomNavItem.Settings.route
             ) {
-                SettingsScreen()
+                SettingsScreen(onBackClick = { navController.popBackStack() })
             }
 
             composable(
                 route = Routes.CREATE_SALE
             ) {
-                CreateSaleScreen()
+
+                CreateSaleScreen(
+                    onBackClick = {
+                        navController.popBackStack()
+                    }
+                )
             }
         }
     }

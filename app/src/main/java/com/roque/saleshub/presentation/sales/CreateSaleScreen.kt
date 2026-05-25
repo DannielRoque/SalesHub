@@ -30,6 +30,7 @@ import com.roque.saleshub.data.local.entity.ProductEntity
 import com.roque.saleshub.data.local.entity.SaleItemEntity
 import com.roque.saleshub.data.mock.FakeCustomers
 import com.roque.saleshub.data.mock.FakeProducts
+import com.roque.saleshub.presentation.components.ScreenHeader
 import com.roque.saleshub.presentation.sales.components.AddedProductCard
 import com.roque.saleshub.presentation.sales.components.QuantitySelector
 import com.roque.saleshub.presentation.sales.components.SelectorField
@@ -42,7 +43,9 @@ private val PurplePrimary = Color(0xFF5B35F2)
 private val DisabledColor = Color(0xFFD8D5E3)
 
 @Composable
-fun CreateSaleScreen() {
+fun CreateSaleScreen(
+    onBackClick: () -> Unit
+) {
 
     val customers = FakeCustomers.customers
 
@@ -101,12 +104,25 @@ fun CreateSaleScreen() {
                 .fillMaxSize()
                 .padding(paddingValues),
 
-            contentPadding = PaddingValues(20.dp),
+            contentPadding = PaddingValues(
+                horizontal = 16.dp,
+                vertical = 8.dp),
 
             verticalArrangement =
-                Arrangement.spacedBy(20.dp)
+                Arrangement.spacedBy(12.dp)
 
         ) {
+
+            item {
+                ScreenHeader(
+
+                    title = "Nova venda",
+
+                    subtitle = "Adicione produtos ao pedido",
+
+                    onBackClick = onBackClick
+                )
+            }
 
             item {
 

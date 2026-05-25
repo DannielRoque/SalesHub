@@ -15,7 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.roque.saleshub.presentation.home.components.HomeHeader
+import com.roque.saleshub.presentation.components.ScreenHeader
 import com.roque.saleshub.presentation.home.components.RecentSalesSection
 import com.roque.saleshub.presentation.home.components.SumaryCard
 
@@ -42,10 +42,17 @@ fun HomeScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues),
-            contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(20.dp)
+            contentPadding = PaddingValues(
+                horizontal = 16.dp,
+                vertical = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            item { HomeHeader() }
+            item {
+                ScreenHeader(
+                    title = "Olá, Daniel",
+                    subtitle = "Aqui está o resumo do seu negócio"
+                )
+            }
 
             item {
                 Row(
