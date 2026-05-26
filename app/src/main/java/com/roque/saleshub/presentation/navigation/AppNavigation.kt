@@ -12,7 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.roque.saleshub.data.local.database.AppDatabase
-import com.roque.saleshub.data.repository.SalesRepositoryImpl
+import com.roque.saleshub.domain.repository.SalesRepositoryImpl
 import com.roque.saleshub.presentation.home.HomeScreen
 import com.roque.saleshub.presentation.products.ProductsScreen
 import com.roque.saleshub.presentation.sales.CreateSaleScreen

@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.roque.saleshub.data.local.entity.SaleEntity
 import com.roque.saleshub.data.local.entity.SaleItemEntity
 import com.roque.saleshub.data.local.entity.SaleWithItems
-import com.roque.saleshub.domain.SalesRepository
+import com.roque.saleshub.domain.repository.SalesRepository
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn

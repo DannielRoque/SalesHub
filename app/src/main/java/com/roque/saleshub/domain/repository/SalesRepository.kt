@@ -1,4 +1,4 @@
-package com.roque.saleshub.data.repository
+package com.roque.saleshub.domain.repository
 
 import com.roque.saleshub.data.local.entity.SaleEntity
 import com.roque.saleshub.data.local.entity.SaleItemEntity

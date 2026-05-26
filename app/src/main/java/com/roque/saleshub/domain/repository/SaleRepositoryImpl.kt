@@ -1,4 +1,4 @@
-package com.roque.saleshub.data.repository
+package com.roque.saleshub.domain.repository
 
 import androidx.room.withTransaction
 import com.roque.saleshub.data.local.database.AppDatabase
