@@ -19,25 +19,22 @@ Aplicativo Android desenvolvido em Kotlin com Jetpack Compose para gerenciamento
 
 ## 📱 Telas
 
-### Home
-- Resumo financeiro do negócio e últimas vendas realizadas.
-- Acesso rápido para a criação de novos pedidos.
+## 📱 Screens
 
-### Históricos
-- Histórico completo de pedidos realizados ordenados por data de criação.
-- Listagem reativa integrada diretamente ao banco de dados local.
-
-### Vendas
-- Fluxo completo de venda: Seleção de cliente e inserção de produtos via BottomSheet.
-- Carrinho de compras integrado com suporte a remoção de itens e atualização de preço instantânea.
-- Persistência atômica da venda e de seus respectivos itens vinculados.
-
-### Produtos
-- Lista de produtos cadastrados, controle de estoque fictício e valores unitários.
-
-### Configurações
-- Configurações gerais do sistema e estrutura para personalização futura.
-
+<table align="center">
+  <tr>
+    <td align="center"><strong>Home Screen</strong></td>
+    <td align="center"><strong>Produtos</strong></td>
+    <td align="center"><strong>Nova Venda</strong></td>
+    <td align="center"><strong>Configurações</strong></td>
+  </tr>
+  <tr>
+    <td><img src=".github/images/home.png" width="240" alt="Home Screen"/></td>
+    <td><img src=".github/images/products.png" width="240" alt="Sales History Screen"/></td>
+    <td><img src=".github/images/venda.png" width="240" alt="Create Sale Screen"/></td>
+    <td><img src=".github/images/configuracoes.png" width="240" alt="Create Sale Screen"/></td>
+  </tr>
+</table>
 ---
 ## Versão do Android Studio / Ambiente
 
