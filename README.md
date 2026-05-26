@@ -33,7 +33,9 @@ Aplicativo Android desenvolvido em Kotlin com Jetpack Compose para gerenciamento
     <td><img src=".github/images/configuracoes.png" width="240" alt="Create Sale Screen"/></td>
   </tr>
 </table>
+
 ---
+
 ## Versão do Android Studio / Ambiente
 
 Android Studio Panda 4 | 2025.3.4 Patch 1
