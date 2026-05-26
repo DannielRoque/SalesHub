@@ -19,8 +19,6 @@ Aplicativo Android desenvolvido em Kotlin com Jetpack Compose para gerenciamento
 
 ## 📱 Telas
 
-## 📱 Screens
-
 <table align="center">
   <tr>
     <td align="center"><strong>Home Screen</strong></td>
